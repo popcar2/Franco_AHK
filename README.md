@@ -13,7 +13,7 @@ Writing english letters instantly write their arabic counterparts (for example, 
 
 Letters that usually form a different pronounciation are converted automatically as well (for example, "sh" --> "ش"), but you can cancel out of it and go back to "سه" by pressing backspace.
 
-Pressing shift + a letter will cycle through different variants of it. For example pressing "A" will form "أ", and typing "AA" will form "إ", and so on.
+Pressing shift + a letter will cycle through different variants of it. For example pressing "d" forms "د", but typing "D" forms "ض". Typing "D" again will form "ذ". Most similar letters follow this logic.
 
 A longer example: "Ana bs 3ayz afhm ent 3mlt elbrnamg dh lih" --> "انا بس عايز افهم انت عملت البرنامج ده ليه"
 
