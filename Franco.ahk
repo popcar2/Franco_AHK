@@ -3,6 +3,10 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
++`::
+suspend
+return
+
 a::
 e:: ; A and E use the same inputs, since they're similar.
 if (lastPressed = "2"){
