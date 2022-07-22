@@ -281,9 +281,39 @@ Send, ع
 lastPressed := ""
 return
 
+$+3::
+if (lastPressed = "-3"){
+	Send, {BackSpace}3
+	lastPressed := "+3"
+}
+else if (lastPressed = "+3"){
+	Send, {BackSpace}{#}
+	lastPressed := "-3"
+}
+else{
+	Send, 3
+	lastPressed := "+3"
+}
+return
+
 $4::
 Send, ش
 lastPressed := ""
+return
+
+$+4::
+if (lastPressed = "-4"){
+	Send, {BackSpace}4
+	lastPressed := "+4"
+}
+else if (lastPressed = "+4"){
+	Send, {BackSpace}$
+	lastPressed := "-4"
+}
+else{
+	Send, 4
+	lastPressed := "+4"
+}
 return
 
 $5::
@@ -291,14 +321,59 @@ Send, خ
 lastPressed := ""
 return
 
+$+5::
+if (lastPressed = "-5"){
+	Send, {BackSpace}5
+	lastPressed := "+5"
+}
+else if (lastPressed = "+5"){
+	Send, {BackSpace}{`%}
+	lastPressed := "-5"
+}
+else{
+	Send, 5
+	lastPressed := "+5"
+}
+return
+
 $7::
 Send, ح
 lastPressed := ""
 return
 
+$+7::
+if (lastPressed = "-7"){
+	Send, {BackSpace}7
+	lastPressed := "+7"
+}
+else if (lastPressed = "+7"){
+	Send, {BackSpace}{`&}
+	lastPressed := "-7"
+}
+else{
+	Send, 7
+	lastPressed := "+7"
+}
+return
+
 $8::
 Send, غ
 lastPressed := ""
+return
+
+$+8::
+if (lastPressed = "-8"){
+	Send, {BackSpace}8
+	lastPressed := "+8"
+}
+else if (lastPressed = "+8"){
+	Send, {BackSpace}*
+	lastPressed := "-8"
+}
+else{
+	Send, 8
+	lastPressed := "+8"
+}
 return
 
 $?::
@@ -324,5 +399,10 @@ return
 
 $Space::
 Send, {Space}
+lastPressed = ""
+return
+
+$,::
+Send, ،
 lastPressed = ""
 return
