@@ -11,7 +11,7 @@ Franco-Arabic is a way of writing Arabic using English letters and numbers. Many
 
 Writing english letters instantly write their arabic counterparts (for example, "s" --> "س", "h" --> "ه")
 
-Letters that usually form a different pronounciation are converted automatically as well (for example, "sh" --> "ش"), but you can cancel out of it and go back to "ته" by pressing backspace.
+Letters that usually form a different pronounciation are converted automatically as well (for example, "sh" --> "ش"), but you can cancel out of it and go back to "سه" by pressing backspace.
 
 Pressing shift + a letter will cycle through different variants of it. For example pressing "A" will form "أ", and typing "AA" will form "إ", and so on.
 
