@@ -1,36 +1,36 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-;lastPressed := ""
-
 a::
 e:: ; A and E use the same inputs, since they're similar.
-Send, ا
-lastPressed := ""
+if (lastPressed = "2"){
+	Send, {BackSpace}أ
+	lastPressed := "2a"
+}
+else{
+	Send, ا
+	lastPressed := "a"
+}
 return
 
 +a:: ; Switches between ةأإ
 +e::
 if (lastPressed = "-a"){
-	Send, {BackSpace}ة
+	Send, {BackSpace}ى
 	lastPressed := "+a"
 }
 else if (lastPressed = "+a"){
-	Send, {Backspace}أ
-	lastPressed := "+aa"
-}
-else if (lastPressed = "+aa"){
-	Send, {BackSpace}ى
-	lastPressed := "+aaa"
-}
-else if (lastPressed = "+aaa"){
-	Send, {Backspace}إ
+	Send, {BackSpace}ة
 	lastPressed := "-a"
 }
+else if (lastPressed = "2"){
+	Send, {BackSpace}ئ
+	lastPressed = ""
+}
 else{ ; Default
-	Send, ة
+	Send, ى
 	lastPressed := "+a"
 }
 return
@@ -51,8 +51,18 @@ lastPressed := ""
 return
 
 +d::
-Send, ض
-lastPressed := ""
+if (lastPressed = "-d"){
+	Send, {BackSpace}ض
+	lastPressed := "+d"
+}
+else if (lastPressed = "+d"){
+	Send, {BackSpace}ذ
+	lastPressed := "-d"
+}
+else{
+	Send, ض
+	lastPressed := "+d"
+}
 return
 
 f::
@@ -79,6 +89,10 @@ else if (lastPressed = "t"){
 	Send, {BackSpace}ث
 	lastPressed := "th"
 }
+else if (lastPressed = "+t"){
+	Send, {BackSpace}ظ
+	lastPressed := "+th"
+}
 else{
 	Send, ه
 	lastPressed := "h"
@@ -86,7 +100,7 @@ else{
 return
 
 +h::
-Send, ش
+Send, ة
 lastPressed := ""
 return
 
@@ -125,14 +139,15 @@ Send, ن
 lastPressed := ""
 return
 
+u::
 o::
 if (lastPressed = "2"){
 	Send, {BackSpace}ؤ
-	lastPressed = ""
+	lastPressed = "2o"
 }
 else{
 	Send, و
-	lastPressed := ""
+	lastPressed := "o"
 }
 return
 
@@ -187,13 +202,11 @@ lastPressed := "t"
 return
 
 +t::
-Send, ث
+Send, ط
+lastPressed := "+t"
 return
 
-u::
-Send, ي
-lastPressed := ""
-return
+; u is the same as o
 
 v::
 Send, ڨ
@@ -225,29 +238,72 @@ Send, ز
 lastPressed := ""
 return
 
-2::
-Send, ء
-lastPressed := "2"
+$2::
+;if (lastPressed = "o"){
+;	Send, {BackSpace}ؤ
+;	lastPressed := "o2"
+;}
+if (lastPressed = "2a2"){
+	Send, {BackSpace}أ
+	lastPressed := "2a"
+}
+else if (lastPressed = "2a"){
+	Send, {BackSpace}إ
+	lastPressed := "2a2"
+}
+else if (lastPressed = "-a" or lastPressed = "+a"){
+	Send, {BackSpace}ئ
+	lastPressed := ""
+}
+else{
+	Send, ء
+	lastPressed := "2"
+}
 return
 
-3::
+$+2::
+if (lastPressed = "-2"){
+	Send, {BackSpace}2
+	lastPressed := "+2"
+}
+else if (lastPressed = "+2"){
+	Send, {BackSpace}@
+	lastPressed := "-2"
+}
+else{
+	Send, 2
+	lastPressed := "+2"
+}
+return
+
+$3::
 Send, ع
 lastPressed := ""
 return
 
-5::
+$4::
+Send, ش
+lastPressed := ""
+return
+
+$5::
 Send, خ
 lastPressed := ""
 return
 
-7::
+$7::
 Send, ح
 lastPressed := ""
 return
 
-8::
+$8::
 Send, غ
 lastPressed := ""
+return
+
+$?::
+Send, ؟
+lastPressed := "" 
 return
 
 $BackSpace::
@@ -256,6 +312,9 @@ if (lastPressed = "sh"){
 }
 else if (lastPressed = "th"){
 	Send, {BackSpace}ته
+}
+else if (lastPressed = "+th"){
+	Send, {BackSpace}طه
 }
 else{
 	Send, {BackSpace}
