@@ -325,7 +325,7 @@ if (lastPressed = "-5"){
     lastPressed := "+5"
 }
 else if (lastPressed = "+5"){
-    Send, {BackSpace}%
+    Send, {BackSpace}`%
     lastPressed := "-5"
 }
 else{
